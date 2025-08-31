@@ -9,10 +9,10 @@ public class TreeNode {
   public void insert(int value) {
 
     /*
-    * If the value equals to data,then it's duplicate value,
-    * we dont do anything to insert duplicate value
-    * just return
-    * */
+     * If the value equals to data,then it's duplicate value,
+     * we dont do anything to insert duplicate value
+     * just return
+     * */
 
     if (value == data) {
       return;
@@ -24,7 +24,7 @@ public class TreeNode {
         ELSE at left already data present then call insert method - kind of recursive call
      */
 
-     if (leftChild == null) {
+      if (leftChild == null) {
         leftChild = new TreeNode(value);
       } else {
         leftChild.insert(value);
@@ -39,9 +39,23 @@ public class TreeNode {
 
   }
 
-
   public TreeNode(int data){
     this.data = data;
+  }
+
+  public void traverseInOrder() {
+    /*
+     * In-Order : LEFT, ROOT, RIGHT
+     */
+    if (leftChild != null) {
+      leftChild.traverseInOrder();
+    }
+      System.out.println(data + ", ");
+
+    if (rightChild != null) {
+      rightChild.traverseInOrder();
+    }
+
   }
 
   public int getData() {
