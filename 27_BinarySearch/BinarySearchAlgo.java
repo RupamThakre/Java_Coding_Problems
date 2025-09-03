@@ -67,4 +67,15 @@ class Main {
 
     }
 
+    public static void printArrayUsingRecursion(int[] input, int size){
+
+        if(size == input.length){
+            return;
+        }else {
+            printArrayUsingRecursion(input, size+1);
+            System.out.println("Element : "+input[size]);
+        }
+
+    }
+
 }
